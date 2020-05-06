@@ -1,0 +1,11 @@
+@startuml
+"サーバ" -> DHCPサーバ: 誰かIPアドレスくれ
+"DHCPサーバ" -> サーバ: お前のIPアドレスこれな
+"サーバ" -> dnsmasq: わしPXEブートなんやけど誰か
+"dnsmasq" -> サーバ: 起動イメージはここ( matchbox )にあるで
+"サーバ" -> matchbox: 起動イメージください
+"matchbox" -> サーバ: まずiPXEで起動しなおしてね
+"サーバ" -> matchbox: iPXEで起動したで。わしのMACアドレスはこれなんじゃが次どうすれば
+matchbox -> サーバ: 君はCoreOSな、カーネルイメージとパラメータ、initramfsはこれな
+"サーバ" -> サーバ: よっしゃ頑張る
+@enduml
